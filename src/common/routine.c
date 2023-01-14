@@ -1,6 +1,7 @@
 #include "../../include/header.h"
 
-int core()
+int routine()
 {
+    
     return (0);
 }

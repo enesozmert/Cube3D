@@ -1,7 +1,6 @@
 #include "../../include/header.h"
 
-int common()
+int map_parser()
 {
-    
     return (0);
 }
