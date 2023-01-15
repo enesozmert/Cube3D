@@ -1,8 +1,11 @@
 #include "../../include/header.h"
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
     (void)argc;
-    (void)argv;    
+    t_map map;
+    init_map(&map);
+    read_map(argv[1], &map);
+    parser_map(&map);
     return (0);
 }

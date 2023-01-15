@@ -1,6 +1,6 @@
 #include "../../include/header.h"
 
-int map_parser()
+int argc_error()
 {
     return (0);
 }

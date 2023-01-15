@@ -4,6 +4,7 @@
         "mlx.h": "c",
         "libft.h": "c",
         "unistd.h": "c",
-        "texture_dir.h": "c"
+        "texture_dir.h": "c",
+        "time.h": "c"
     }
 }

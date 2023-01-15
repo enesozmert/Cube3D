@@ -20,17 +20,23 @@ SRC_DIR			= 	src/
 SRC_COMMON		= 	common/
 SRC_EXCEPTION	=	exception/
 SRC_CORE		=	core/
+SRC_DRAWING		=	drawing/
+SRC_EVENTS		=	events/
+SRC_PARSING		=	parsing/
+SRC_RAYCASTING	=	raycasting/
 SRC_GNL			=	gnl/
+SRC_INIT		=	init/
 
 #Files
-COMMON			= 	main routine
-EXCEPTION		= 	exception
-CORE			= 	core ft_strjoin_s1
+COMMON			= 	main routine read_map
+EXCEPTION		= 	exception map_error argc_error
+CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension get_file_extension
 DRAWING			= 	
 EVENTS			= 	
-PARSING			=	
+PARSING			=	parser_map
 RAYCASTING		= 	
 GNL				= 	gnl
+INIT			= 	init_map init_floor init_ceiling init_texture_dirs
 
 #FileCreate 
 SRC_FILES		+=	$(addprefix $(SRC_COMMON),$(COMMON))
@@ -41,6 +47,7 @@ SRC_FILES		+=	$(addprefix $(SRC_EVENTS),$(EVENTS))
 SRC_FILES		+=	$(addprefix $(SRC_PARSING),$(PARSING))
 SRC_FILES		+=	$(addprefix $(SRC_RAYCASTING),$(RAYCASTING))
 SRC_FILES		+=	$(addprefix $(SRC_GNL),$(GNL))
+SRC_FILES		+=	$(addprefix $(SRC_INIT),$(INIT))
 
 SRC 			= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 			= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -59,6 +66,7 @@ $(OBJF):
 			@mkdir -p $(OBJ_DIR)$(SRC_PARSING)
 			@mkdir -p $(OBJ_DIR)$(SRC_RAYCASTING)
 			@mkdir -p $(OBJ_DIR)$(SRC_GNL)
+			@mkdir -p $(OBJ_DIR)$(SRC_INIT)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJF)
 			@$(CC) $(CFLAGS) -c $< -o $@
