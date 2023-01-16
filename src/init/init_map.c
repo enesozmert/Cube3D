@@ -14,7 +14,8 @@ void init_map(t_map *map)
 	map->filename = NULL;
 	map->extension = NULL;
 	map->matris = NULL;
-	map->possible_items = NULL;
+	map->possible_items = "0,1,E,N,S,W, ";
+	map->possible_texture_dir = "NO,SO,WE,EA";
 	map->area = 0;
 	map->max_x = 0;
 	map->max_y = 0;

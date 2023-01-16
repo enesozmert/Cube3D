@@ -20,6 +20,7 @@
 # include "exception.h"
 
 //core
+int         is_valid_filename(char *path);
 char        *ft_strjoin_s1(char *s1, char *s2);
 int         get_block_count(t_map *map, char block_name);
 char        *get_filename_from_path(char *path);
@@ -39,4 +40,8 @@ void        init_map(t_map *map);
 void        init_floor(t_map *map);
 void        init_ceiling(t_map *map);
 void        init_texture_dirs(t_map *map);
+
+//format
+int         format_textture_dir(char *texture_dir, t_map *map);
+int         format_floor_ceiling(char *color, t_map *map);
 #endif

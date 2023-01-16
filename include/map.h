@@ -16,6 +16,7 @@ typedef struct s_map
     char			*extension;
     char    		**matris;
     char			*possible_items;
+    char			*possible_texture_dir;
     int     		area;
     int     		max_x;
     int     		max_y;
