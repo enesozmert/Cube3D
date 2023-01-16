@@ -9,7 +9,14 @@ int parser_map(t_map *map)
     line = NULL;
     while ((line = get_next_line(map->fd)) != NULL)
 	{
-		printf("Ligne %d --> %s\n", i, line);
+		if (line[0] == '\n' && ft_strlen(line) == 1)
+		{
+			line = get_next_line(map->fd);
+			i++;
+		}
+		line = ft_strtrim(line, " ");
+		if (format_textture_dir(line, map) == 1)
+			printf("format_textture_dir ok , i : %d\n", i);
 		free(line);
 		i++;
 	}

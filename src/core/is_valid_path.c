@@ -23,7 +23,7 @@ int is_valid_path(char* path)
     if (!has_directory)
         return (0);
     while (i < len) {
-        if (!((path[i] >= 'a' && path[i] <= 'z') || (path[i] >= 'A' && path[i] <= 'Z') || (path[i] >= '0' && path[i] <= '9') || path[i] == '.' || path[i] == '_' || path[i] == '-' || path[i] == '/' || path[i] == '\\'))
+        if (!((path[i] >= 'a' && path[i] <= 'z') || (path[i] >= 'A' && path[i] <= 'Z') || (path[i] >= '0' && path[i] <= '9') || path[i] == '.' || path[i] == '_' || path[i] == '-' || path[i] == '/' || path[i] == '\\' || path[i] == '\n'))
             return (0);
         i++;
     }

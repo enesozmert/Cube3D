@@ -2,7 +2,6 @@
 
 void init_map(t_map *map)
 {
-	map = malloc(sizeof(t_map) * 1);
 	map->floor = malloc(sizeof(t_floor) * 1);
 	init_floor(map);
 	map->ceiling = malloc(sizeof(t_ceiling) * 1);
@@ -15,7 +14,7 @@ void init_map(t_map *map)
 	map->extension = NULL;
 	map->matris = NULL;
 	map->possible_items = "0,1,E,N,S,W, ";
-	map->possible_texture_dir = "NO,SO,WE,EA";
+	map->possible_texture_dir = ft_strdup("NO,SO,WE,EA");
 	map->area = 0;
 	map->max_x = 0;
 	map->max_y = 0;

@@ -2,7 +2,6 @@
 
 int main(int argc, char *argv[])
 {
-    (void)argc;
     t_map map;
     init_map(&map);
     if (argc != 2)

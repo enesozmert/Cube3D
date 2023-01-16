@@ -9,6 +9,5 @@ int read_map(char *path, t_map *map)
 	map->path = ft_strdup(path);
 	map->filename = get_filename_without_extension(path);
 	map->extension = get_file_extension(path);
-	
 	return (0);
 }
