@@ -31,7 +31,7 @@ SRC_FORMAT		=	format/
 #Files
 COMMON			= 	main routine read_map
 EXCEPTION		= 	exception map_error argc_error
-CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension get_file_extension is_valid_filename
+CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension get_file_extension is_valid_filename is_valid_path
 DRAWING			= 	
 EVENTS			= 	
 PARSING			=	parser_map

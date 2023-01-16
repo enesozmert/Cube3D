@@ -21,6 +21,7 @@
 
 //core
 int         is_valid_filename(char *path);
+int         is_valid_path(char* path);
 char        *ft_strjoin_s1(char *s1, char *s2);
 int         get_block_count(t_map *map, char block_name);
 char        *get_filename_from_path(char *path);
