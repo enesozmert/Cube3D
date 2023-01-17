@@ -1,6 +1,6 @@
 #include "../../include/header.h"
 
-int excepiton_handler(t_map map)
+int exception_handler(t_map map)
 {
     int			i;
 	int			handle_code;
@@ -22,7 +22,7 @@ int excepiton_handler(t_map map)
 	{
 		handle_code = exception[i].f(map);
 		if (handle_code == exception[i].error_code)
-			exit(printf("Error %s\n", exception[i].message));
+			exit(printf("Error : %d %s\n",exception[i].error_code , exception[i].message));
 	}
     return (i);
 }

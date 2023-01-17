@@ -1,6 +1,6 @@
 #include "../../include/header.h"
 
-int parser_map_floor(char *floor, t_map map)
+int parser_map_floor(int fd_start_index, char *floor, t_map *map)
 {
     int i;
     char *str_rgb;
@@ -10,8 +10,9 @@ int parser_map_floor(char *floor, t_map map)
     str_rgb = ft_substr(floor, 2, ft_strlen(floor));
     get_int_rgb = int_rgb(str_rgb);
     while (++i < 3)
-        map.floor->rgb[i] = get_int_rgb[i];
-    map.floor->hex_color = rgb_hex(map.floor->rgb[0], map.floor->rgb[1], map.floor->rgb[2]);
+        map->floor->rgb[i] = get_int_rgb[i];
+    map->floor->hex_color = rgb_hex(map->floor->rgb[0], map->floor->rgb[1], map->floor->rgb[2]);
+    map->floor->fd_start_index = fd_start_index;
     free(get_int_rgb);
     free(str_rgb);
     return (0);

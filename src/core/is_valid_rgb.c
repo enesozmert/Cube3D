@@ -7,13 +7,13 @@ int is_valid_rgb(char *str)
     int     rgb[3];
     char    **get_rgb;
 
-    count = -1;
+    count = 0;
     comma = get_str_char_count(str, ',');
     if (comma != 2)
         return (0);
     get_rgb = ft_split(str, ',');
-    if (get_rgb[count])
-        ++count;
+    while (get_rgb[count])
+        count++;
     if (count < 0 || count > 3)
         return (0);
     count = -1;

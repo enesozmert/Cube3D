@@ -2,32 +2,42 @@
 
 int	map_error(t_map map)
 {
-	(void)map;
-	// int	x;
-	// int	y;
-	// int	size;
+	int i;
+	int	x;
+	int	y;
+	int	size;
 
-	// x = 1;
-	// y = 0;
-    // size = 0;
-	// while (map.matris[y])
-	// {
-	// 	x = 1;
-	//     size = ft_strlen(map.matris[y]);
-	// 	while (map.matris[y][x])
-	// 	{
-	// 		if (map.matris[0][x - 1] != '1')
-	// 			return (404);
-	// 		if (map.matris[y][0] != '1')
-	// 			return (403);
-	// 		if (map.matris[y][size - 1] != '1')
-	// 			return (402);
-	// 		if (map.matris[size - 1][x - 1] != '1')
-	// 			return (401);
-	// 		x++;
-	// 	}
-	// 	y++;
-	// }
+	x = 1;
+	y = 0;
+	i = -1;
+    size = 0;
+	while (map.matris[++i])
+	{
+		printf("i: %d line :%s\n", i, map.matris[i]);
+	}
+	while (map.matris[y])
+	{
+		x = 0;
+	    size = (int)ft_strlen(map.matris[y]) - 1;
+		while (map.matris[y][x])
+		{
+			if (map.matris[0][x] != '1')
+				return (404);
+			else if (map.matris[y][0] != '1')
+				return (403);
+			// printf("y: %d size: %d char %c\n", y, size - 2, map.matris[y][size - 2]);
+			//printf("****%c\n", map.matris[y][size - 1]);
+			if (map.matris[y][size - 1] != '1')
+			{
+				//printf("y: %d size: %d char %c\n", y, size, map.matris[y][size - 1]);
+				return (402);
+			}
+			else if (map.matris[size - 1][x] != '1')
+				return (401);
+			x++;
+		}
+		y++;
+	}
 	return (0);
 }
 

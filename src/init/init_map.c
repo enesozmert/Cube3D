@@ -14,12 +14,15 @@ void init_map(t_map *map)
 	map->filename = NULL;
 	map->extension = NULL;
 	map->matris = NULL;
-	map->possible_items = "0,1,E,N,S,W, ";
+	map->possible_items = ft_strdup("0,1,E,N,S,W, ");
 	map->possible_texture_dir = ft_strdup("NO,SO,WE,EA");
 	map->area = 0;
 	map->max_x = 0;
 	map->max_y = 0;
 	map->max_line_size = 0;
 	map->min_line_size = 0;
+	map->floor_count = 0;
+	map->ceiling_count = 0;
+	map->texture_dirs_count = 0;
 	map->check = -1;
 }

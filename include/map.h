@@ -23,6 +23,9 @@ typedef struct s_map
     int     		max_y;
     int     		max_line_size;
     int     		min_line_size;
+    int             floor_count;
+    int             ceiling_count;
+    int             texture_dirs_count;
     int     		check;
 }   t_map;
 

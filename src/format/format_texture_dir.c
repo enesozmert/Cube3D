@@ -1,6 +1,6 @@
 #include "../../include/header.h"
 
-int format_textture_dir(char *texture_dir, t_map *map)
+int format_texture_dir(char *texture_dir, t_map *map)
 {
     int i;
     int flag;

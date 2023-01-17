@@ -9,5 +9,6 @@ int read_map(char *path, t_map *map)
 	map->path = ft_strdup(path);
 	map->filename = get_filename_without_extension(path);
 	map->extension = get_file_extension(path);
+	map->matris = (char **)malloc(sizeof(char *) * get_map_height(map->path) + 1);
 	return (0);
 }

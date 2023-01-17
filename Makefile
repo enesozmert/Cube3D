@@ -33,7 +33,8 @@ COMMON			= 	main routine read_map
 EXCEPTION		= 	exception map_error argc_error
 CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
 					get_file_extension is_valid_filename is_valid_path get_str_char_count \
-					is_valid_rgb rgb_hex int_rgb
+					is_valid_rgb rgb_hex int_rgb \
+					get_map_height
 DRAWING			= 	
 EVENTS			= 	
 PARSING			=	parser_map \

@@ -5,6 +5,7 @@
         "libft.h": "c",
         "unistd.h": "c",
         "texture_dir.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "floor.h": "c"
     }
 }

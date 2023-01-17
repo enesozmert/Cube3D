@@ -31,6 +31,7 @@ char            *get_file_extension(char *path);
 int             get_str_char_count(char *str, char x);
 unsigned long   rgb_hex(int r, int g, int b);
 int             *int_rgb(char *str);
+int				get_map_height(char *path);
 int 	        core();
 
 //common
@@ -39,9 +40,9 @@ int         read_map(char *path, t_map *map);
 
 //parsing
 int         parser_map(t_map *map);
-int         parser_map_floor(char *floor, t_map map);
-int         parser_map_ceiling(char *ceiling, t_map *map);
-int         parser_map_textture_dir(int index, char *texture_dir, t_map map);
+int         parser_map_floor(int fd_start_index, char *floor, t_map *map);
+int         parser_map_ceiling(int fd_start_index, char *ceiling, t_map *map);
+int         parser_map_textture_dir(int fd_start_index, char *texture_dir, t_map *map);
 
 //init
 void        init_map(t_map *map);
@@ -50,7 +51,7 @@ void        init_ceiling(t_map *map);
 void        init_texture_dirs(t_map *map);
 
 //format
-int         format_textture_dir(char *texture_dir, t_map *map);
+int         format_texture_dir(char *texture_dir, t_map *map);
 int         format_ceiling(char *ceiling, t_map *map);
 int         format_floor(char *floor, t_map *map);
 #endif
