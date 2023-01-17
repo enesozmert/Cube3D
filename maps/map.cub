@@ -1,17 +1,17 @@
-   NO ./images/textures/north/north.xpm
+NO ./images/textures/north/north.xpm
 
 SO ./images/textures/south/south.xpm
 
 WE ./images/textures/west/west.xpm
 
-F 2     ,       20      ,       2
-C 220,10,23
+EA ./images/textures/east/east.xpm
+F 2,20,    2
+C 255,10,23
         1111111111111111111111111
         1600900070110009009409091
         1000004000910004404404091
         1500000000020000440440491
 111111111000004000910009009049091
-EA ./images/textures/east/east.xpm
 188836000000004051111111111111111
 17771000000000511160000916061
 11111121111111111100000020001

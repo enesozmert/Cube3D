@@ -31,14 +31,17 @@ SRC_FORMAT		=	format/
 #Files
 COMMON			= 	main routine read_map
 EXCEPTION		= 	exception map_error argc_error
-CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension get_file_extension is_valid_filename is_valid_path
+CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
+					get_file_extension is_valid_filename is_valid_path get_str_char_count \
+					is_valid_rgb rgb_hex int_rgb
 DRAWING			= 	
 EVENTS			= 	
-PARSING			=	parser_map
+PARSING			=	parser_map \
+					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	
 GNL				= 	gnl
 INIT			= 	init_map init_floor init_ceiling init_texture_dirs
-FORMAT			= 	format_floor_ceiling format_texture_dir
+FORMAT			= 	format_floor format_ceiling format_texture_dir
 
 #FileCreate 
 SRC_FILES		+=	$(addprefix $(SRC_COMMON),$(COMMON))

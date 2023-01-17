@@ -5,10 +5,11 @@ void init_map(t_map *map)
 	map->floor = malloc(sizeof(t_floor) * 1);
 	init_floor(map);
 	map->ceiling = malloc(sizeof(t_ceiling) * 1);
-	init_floor(map);
+	init_ceiling(map);
 	map->texture_dirs = malloc(sizeof(t_texture_dir) * 4);
 	init_texture_dirs(map);
 	map->fd = -1;
+	map->fd_start_index = -1;
 	map->path = NULL;
 	map->filename = NULL;
 	map->extension = NULL;

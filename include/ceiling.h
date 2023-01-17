@@ -3,6 +3,7 @@
 
 typedef struct s_ceiling
 {
+    int             fd_start_index;
     unsigned long	hex_color;
     int				*rgb;
     int				check;

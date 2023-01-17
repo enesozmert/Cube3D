@@ -11,6 +11,7 @@ typedef struct s_map
     t_ceiling		*ceiling;
 	t_texture_dir	*texture_dirs;
     int             fd;
+    int             fd_start_index;
     char            *path;
     char			*filename;
     char			*extension;
