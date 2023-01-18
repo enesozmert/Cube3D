@@ -2,6 +2,6 @@
 
 void init_screen(t_screen *screen)
 {
-    screen->height = 0;
-    screen->width = 0;
+    screen->height = 1080;
+    screen->width = 720;
 }

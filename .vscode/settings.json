@@ -7,6 +7,9 @@
         "texture_dir.h": "c",
         "time.h": "c",
         "floor.h": "c",
-        "position.h": "c"
+        "position.h": "c",
+        "game.h": "c",
+        "screen.h": "c",
+        "wlx.h": "c"
     }
 }

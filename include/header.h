@@ -23,6 +23,8 @@
 # include "frame.h"
 # include "position.h"
 # include "screen.h"
+# include "wlx.h"
+# include "game.h"
 
 //core
 int             is_valid_filename(char *path);
@@ -41,8 +43,8 @@ t_position		*get_player_position(t_map *map);
 int 	        core();
 
 //common
-int         routine();
-int         read_map(char *path, t_map *map);
+int         	routine();
+int         	read_map(char *path, t_map *map);
 
 //parsing
 int         parser_map(t_map *map);
@@ -64,4 +66,7 @@ void		init_screen(t_screen *screen);
 int         format_texture_dir(char *texture_dir, t_map *map);
 int         format_ceiling(char *ceiling, t_map *map);
 int         format_floor(char *floor, t_map *map);
+
+//drawing
+int 		load_screen(t_game *game);
 #endif

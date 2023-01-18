@@ -36,14 +36,14 @@ CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extensi
 					is_valid_rgb rgb_hex int_rgb \
 					get_map_height \
 					get_player_position
-DRAWING			= 	
+DRAWING			= 	load_screen
 EVENTS			= 	
 PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	
 GNL				= 	gnl
 INIT			= 	init_map init_floor init_ceiling init_texture_dirs\
-					init_player init_camera init_frame
+					init_player init_camera init_frame init_screen
 FORMAT			= 	format_floor format_ceiling format_texture_dir
 
 #FileCreate 
