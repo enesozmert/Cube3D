@@ -2,11 +2,11 @@
 
 void init_map(t_map *map)
 {
-	map->floor = malloc(sizeof(t_floor) * 1);
+	map->floor = malloc(sizeof(t_floor) * 2);
 	init_floor(map);
-	map->ceiling = malloc(sizeof(t_ceiling) * 1);
+	map->ceiling = malloc(sizeof(t_ceiling) * 2);
 	init_ceiling(map);
-	map->texture_dirs = malloc(sizeof(t_texture_dir) * 4);
+	map->texture_dirs = malloc(sizeof(t_texture_dir) * 5);
 	init_texture_dirs(map);
 	map->fd = -1;
 	map->fd_start_index = -1;

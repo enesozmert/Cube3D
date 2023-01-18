@@ -8,13 +8,9 @@ int map_error(t_map map)
 	int width;
 
 	x = 0;
-	y = -1;
-	width = 0;
-	height = 0;
-	while (map.matris[++y])
-		height++;
 	y = 0;
-	height--;
+	width = 0;
+	height = get_map_height(map.path) - 7;
 	while (map.matris[y])
 	{
 		x = 0;
@@ -36,63 +32,49 @@ int map_error(t_map map)
 	return (0);
 }
 
-int item_repeat_error(t_map map)
+int header_count_error(t_map map)
 {
-	(void)map;
-	// char	*singular_items;
-	// char	**get_posible_items;
-	// int		i;
-	// int     j;
+	int i;
 
-	// i = -1;
-	// j = -1;
-	// get_posible_items = ft_split(map.possible_items, ",");
-	// while (singular_items[++i])
-	// {
-	//     while (get_posible_items[++j])
-	//     {
-	//         if (get_block_count(&map, get_posible_items[j]) < 1)
-	// 		    return (202);
-	//     }
-	// }
+	i = -1;
+	while (++i < 4)
+	{
+		if (map.texture_dirs_count > 4)
+			return (102);
+	}
+	if (map.floor_count > 1 || map.ceiling_count > 1)
+		return (102);
+	return (0);
+}
+
+int header_location_error(t_map map)
+{
+	int i;
+
+	i = -1;
+	while (++i < 4)
+	{
+		if (map.texture_dirs[i].fd_start_index > 5)
+			return (103);
+	}
+	if (map.floor->fd_start_index > 5 || map.ceiling->fd_start_index > 5)
+		return (103);
 	return (0);
 }
 
 int item_single_error(t_map map)
 {
-	// (void)map;
-	int i;
+	int		i;
+	int		result;
 	char	**get_posible_single_items;
 
 	i = -1;
+	result = 0;
 	get_posible_single_items = ft_split(map.possible_single_items, ',');
 	while (get_posible_single_items[++i])
-	{
-		if (get_block_count(&map, get_posible_single_items[i][0]) != 1)
-			return (204);
-	}
-	return (0);
-}
-
-int item_wrong_error(t_map map)
-{
-	(void)map;
-	// int	i;
-	// int	j;
-
-	// j = 0;
-	// i = 0;
-	// while (map.matris[i])
-	// {
-	// 	j = 0;
-	// 	while (map.matris[i][j])
-	// 	{
-	// 		if (!ft_strchr("1PCE0X\n", map.matris[i][j]))
-	// 			return (102);
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
+		result += get_block_count(&map, get_posible_single_items[i][0]);
+	if (result < 1 || result > 1)
+		return (204);
 	return (0);
 }
 
