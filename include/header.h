@@ -56,6 +56,7 @@ void        init_ceiling(t_map *map);
 void        init_texture_dirs(t_map *map);
 void		init_camera(t_camera *camera);
 void		init_frame(t_frame *frame);
+void		init_player(t_player *player);
 
 //format
 int         format_texture_dir(char *texture_dir, t_map *map);
