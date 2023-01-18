@@ -6,6 +6,7 @@
         "unistd.h": "c",
         "texture_dir.h": "c",
         "time.h": "c",
-        "floor.h": "c"
+        "floor.h": "c",
+        "position.h": "c"
     }
 }
