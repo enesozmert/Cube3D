@@ -5,6 +5,7 @@ int get_map_height(char *path)
 	int 	i;
 	int		map_fd;
     char	*line;
+    char	*tmp_line;
 
 	i = 0;
     line = NULL;
@@ -13,8 +14,9 @@ int get_map_height(char *path)
 	{
 		if (line[0] == '\n' && ft_strlen(line) == 1)
 			line = get_next_line(map_fd);
-		line = ft_strtrim(line, " ");
+		tmp_line = ft_strtrim(line, " ");
 		free(line);
+		free(tmp_line);
 		i++;
 	}
 	close(map_fd);

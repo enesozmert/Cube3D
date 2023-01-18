@@ -15,6 +15,7 @@ void init_map(t_map *map)
 	map->extension = NULL;
 	map->matris = NULL;
 	map->possible_items = ft_strdup("0,1,E,N,S,W, ");
+	map->possible_single_items = ft_strdup("E,N,S,W");
 	map->possible_texture_dir = ft_strdup("NO,SO,WE,EA");
 	map->area = 0;
 	map->max_x = 0;

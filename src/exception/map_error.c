@@ -12,9 +12,6 @@ int map_error(t_map map)
 	width = 0;
 	height = 0;
 	while (map.matris[++y])
-		printf("y: %d line : %s\n", y, map.matris[y]);
-	y = -1;
-	while (map.matris[++y])
 		height++;
 	y = 0;
 	height--;
@@ -24,11 +21,11 @@ int map_error(t_map map)
 		width = (int)ft_strlen(map.matris[y]) - 1;
 		while (map.matris[y][x])
 		{
-			if (map.matris[0][x] != '1' && y == 0 && x < width)
+			if (map.matris[0][x] != '1' && y == 0)
 				return (404);
-			if (map.matris[y][0] != '1' && x == 0 && y < height)
+			if (map.matris[y][0] != '1' && x == 0)
 				return (403);
-			if (map.matris[y][width - 1] != '1' && x == width)
+			if (map.matris[y][width] != '1' && x == width)
 				return (402);
 			if (map.matris[height][x] != '1' && y == height)
 				return (401);
@@ -63,12 +60,17 @@ int item_repeat_error(t_map map)
 
 int item_single_error(t_map map)
 {
-	(void)map;
-	// char	**get_posible_items;
+	// (void)map;
+	int i;
+	char	**get_posible_single_items;
 
-	// get_posible_items = ft_split(map.possible_items, ",");
-	// if (get_block_count(&map, 'P') != 1)
-	// 	return (204);
+	i = -1;
+	get_posible_single_items = ft_split(map.possible_single_items, ',');
+	while (get_posible_single_items[++i])
+	{
+		if (get_block_count(&map, get_posible_single_items[i][0]) != 1)
+			return (204);
+	}
 	return (0);
 }
 
@@ -96,13 +98,12 @@ int item_wrong_error(t_map map)
 
 int file_error(t_map map)
 {
-	(void)map;
-	// char *str;
+	char *str;
 
-	// if (map.fd < 0)
-	// 	return (504);
-	// str = ft_strchr(map.path, '.');
-	// if (ft_strnstr(&str, map.extension, ft_strlen(&map.path)) == NULL)
-	// 	return (502);
+	if (map.fd < 0)
+		return (504);
+	str = ft_strchr(map.path, '.');
+	if (ft_strnstr(&str[0], map.extension, ft_strlen(map.path)) == NULL)
+		return (502);
 	return (0);
 }
