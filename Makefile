@@ -41,7 +41,8 @@ PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	
 GNL				= 	gnl
-INIT			= 	init_map init_floor init_ceiling init_texture_dirs
+INIT			= 	init_map init_floor init_ceiling init_texture_dirs\
+					init_player init_camera init_frame
 FORMAT			= 	format_floor format_ceiling format_texture_dir
 
 #FileCreate 

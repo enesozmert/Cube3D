@@ -18,6 +18,9 @@
 # include "floor.h"
 # include "ceiling.h"
 # include "exception.h"
+# include "camera.h"
+# include "player.h"
+# include "frame.h"
 
 //core
 int             is_valid_filename(char *path);
