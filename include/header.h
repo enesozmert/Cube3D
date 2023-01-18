@@ -21,6 +21,7 @@
 # include "camera.h"
 # include "player.h"
 # include "frame.h"
+# include "position.h"
 
 //core
 int             is_valid_filename(char *path);
@@ -35,6 +36,7 @@ int             get_str_char_count(char *str, char x);
 unsigned long   rgb_hex(int r, int g, int b);
 int             *int_rgb(char *str);
 int				get_map_height(char *path);
+t_position		*get_player_position(t_map *map);
 int 	        core();
 
 //common
