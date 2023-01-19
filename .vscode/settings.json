@@ -10,6 +10,10 @@
         "position.h": "c",
         "game.h": "c",
         "screen.h": "c",
-        "wlx.h": "c"
+        "wlx.h": "c",
+        "ray.h": "c",
+        "chrono": "c",
+        "complex": "c",
+        "__node_handle": "c"
     }
 }

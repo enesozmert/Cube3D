@@ -13,7 +13,9 @@ int main(int argc, char *argv[])
     init_camera(&game.camera);
     init_frame(&game.frame);
     init_screen(&game.screen);
-    load_screen(&game);
+    init_ray(&game.ray);
+    draw_screen(&game);
+    mlx_loop_hook(game.wlx.mlx, ray_update, &game);
     mlx_loop(game.wlx.mlx);
     return (0);
 }

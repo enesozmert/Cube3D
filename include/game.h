@@ -6,6 +6,7 @@
 #include "camera.h"
 #include "frame.h"
 #include "screen.h"
+#include "ray.h"
 #include "wlx.h"
 
 typedef struct s_game
@@ -16,6 +17,7 @@ typedef struct s_game
     t_frame		frame;
     t_wlx       wlx;
     t_screen	screen;
+    t_ray       ray;
 }	t_game;
 
 
