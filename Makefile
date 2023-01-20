@@ -37,11 +37,11 @@ CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extensi
 					get_map_height \
 					get_player_position
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
-					draw_wall_x draw_texture
+					draw_wall_x draw_texture draw_texture_select
 EVENTS			= 	
 PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
-RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed \
+RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_height \
 					
 GNL				= 	gnl
 INIT			= 	init_map init_floor init_ceiling init_texture_dirs \

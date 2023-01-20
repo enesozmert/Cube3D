@@ -77,10 +77,10 @@ int format_floor(char *floor, t_map *map);
 int				draw_screen(t_game *game);
 int				draw_pixel_height(t_game *game);
 int				draw_texture_calculate(t_game *game);
-int				draw_texture_selecet(t_game *game);
+t_draw          *draw_texture_select(t_game *game, int *side);
 unsigned long	draw_texture_color(t_game *game, int *side);
 int				draw_wall_x(t_game *game);
-int             draw_texture(t_game *game, t_data *tmp_data);
+int             draw_texture(t_game *game, t_data *tmp_data, t_draw *select_texture);
 
 // raycasting
 int ray(t_game *game);
@@ -88,5 +88,6 @@ int ray_update(t_game *game);
 int ray_steps(t_game *game, int *step_x, int *step_y);
 int ray_hit(t_game *game, int *step_x, int *step_y, int *side);
 int ray_fisheye_fixed(t_game *game, int *side);
+int ray_wall_height(t_game *game);
 
 #endif

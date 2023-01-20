@@ -22,5 +22,6 @@ int ray_hit(t_game *game, int *step_x, int *step_y, int *side)
         if (game->map.matris[game->ray.map_y][game->ray.map_x] == '1')
             game->ray.hit = 1;
     }
+    game->ray.hit = 0;
     return (0);
 }

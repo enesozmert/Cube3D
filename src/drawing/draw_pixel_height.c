@@ -2,14 +2,12 @@
 
 int draw_pixel_height(t_game *game)
 {
-    int line_height = game->draw.line_height;
-    int start = -line_height / 2 + game->screen.height / 2;
-    if (start < 0)
-        start = 0;
-    int end = line_height / 2 + game->screen.height / 2;
-    if (end >= game->screen.height)
-        end = game->screen.height - 1;
-    game->draw.start = start;
-    game->draw.end = end;
+    game->draw.start = (-1 * game->draw.line_height / 2) + (game->screen.height / 2);
+    if (game->draw.start < 0)
+        game->draw.start = 0;
+    game->draw.end = (game->draw.line_height / 2) + (game->screen.height / 2);
+    if (game->draw.end >= game->screen.height)
+        game->draw.end = game->screen.height - 1;
+    printf("game->draw.line_height %d start %d end %d\n", game->draw.line_height, game->draw.start, game->draw.end);
     return (0);
 }
