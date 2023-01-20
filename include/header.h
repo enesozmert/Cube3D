@@ -24,17 +24,9 @@
 #include "position.h"
 #include "screen.h"
 #include "wlx.h"
-#include "game.h"
 #include "ray.h"
-
-typedef struct s_data
-{
-	void *img;
-	char *addr;
-	int bits_per_pixel;
-	int line_length;
-	int endian;
-} t_data;
+#include "draw.h"
+#include "game.h"
 
 // core
 int is_valid_filename(char *path);
@@ -73,6 +65,8 @@ void init_frame(t_frame *frame);
 void init_player(t_player *player);
 void init_screen(t_screen *screen);
 void init_ray(t_ray *ray);
+void init_draw(t_draw *draw);
+int	init_texture(t_game *game);
 
 // format
 int format_texture_dir(char *texture_dir, t_map *map);
@@ -80,7 +74,13 @@ int format_ceiling(char *ceiling, t_map *map);
 int format_floor(char *floor, t_map *map);
 
 // drawing
-int draw_screen(t_game *game);
+int				draw_screen(t_game *game);
+int				draw_pixel_height(t_game *game);
+int				draw_texture_calculate(t_game *game);
+int				draw_texture_selecet(t_game *game);
+unsigned long	draw_texture_color(t_game *game, int *side);
+int				draw_wall_x(t_game *game);
+int             draw_texture(t_game *game, t_data *tmp_data);
 
 // raycasting
 int ray(t_game *game);

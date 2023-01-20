@@ -19,30 +19,28 @@ int parser_map(t_map *map)
 			// i++;
 		}
 		tmp_line = ft_strtrim(line, " ");
+		ft_tmp_line = ft_strtrim(tmp_line, "\n");
+		ft_tmp_line[ft_strlen(ft_tmp_line)] = '\0';
 		if (format_ceiling(tmp_line, map) == 1)
 		{
 			map->ceiling_count++;
-			parser_map_ceiling(i, tmp_line, map);
+			parser_map_ceiling(i, ft_tmp_line, map);
 			// printf("format_ceiling ok , i : %d index: %d\n", i, map->ceiling->fd_start_index);
 		}
-		else if (format_floor(tmp_line, map) == 1)
+		else if (format_floor(ft_tmp_line, map) == 1)
 		{
 			map->floor_count++;
-			parser_map_floor(i, tmp_line, map);
+			parser_map_floor(i, ft_tmp_line, map);
 			// printf("format_floor ok , i : %d index: %d\n", i, map->floor->fd_start_index);
 		}
-		if (format_texture_dir(tmp_line, map) == 1)
+		if (format_texture_dir(ft_tmp_line, map) == 1)
 		{
 			map->texture_dirs_count++;
-			parser_map_textture_dir(i, tmp_line, map);
+			parser_map_textture_dir(i, ft_tmp_line, map);
 			// printf("format_textture_dir ok , i : %d\n", i);
 		}
 		if (i > 5)
-		{
-			ft_tmp_line = ft_strtrim(tmp_line, "\n");
-			line[ft_strlen(line)] = '\0';
 			map->matris[line_i++] = ft_strdup(ft_tmp_line);
-		}
 		free(tmp_line);
 		free(line);
 		if (!(line[0] == '\n' && ft_strlen(line) == 1))

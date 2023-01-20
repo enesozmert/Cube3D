@@ -1,8 +1,6 @@
 #ifndef RAY_H
 #define RAY_H
 
-# include "game.h"
-
 typedef struct s_ray
 {
 	int		per_pixel_x;

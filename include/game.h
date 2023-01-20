@@ -8,6 +8,7 @@
 #include "screen.h"
 #include "ray.h"
 #include "wlx.h"
+#include "draw.h"
 
 typedef struct s_game
 {
@@ -18,6 +19,9 @@ typedef struct s_game
     t_wlx       wlx;
     t_screen	screen;
     t_ray       ray;
+    t_draw      draw;
+    t_data      tmp_data;
+    t_draw      texture[4];
 }	t_game;
 
 
