@@ -3,7 +3,7 @@
 int draw_texture(t_game *game)
 {
     int y;
-    long int color;
+    unsigned long color;
     y = -1;
     while (++y < game->screen.height)
     {
@@ -11,7 +11,6 @@ int draw_texture(t_game *game)
             game->tmp_data.addr[y * game->screen.width + game->ray.per_pixel_x] = (int)game->map.ceiling->hex_color;
         else if (y >= game->draw.start && y <= game->draw.end)
         {
-            game->tmp_data.addr[y * game->screen.width + game->ray.per_pixel_x] = color;
             game->draw.tex_y = (int)game->draw.tex_pos & (game->select_texture->tex_h - 1);
             game->draw.tex_pos += game->draw.step;
             color = game->select_texture->data.addr[game->draw.tex_y * game->select_texture->tex_h + game->draw.tex_x];

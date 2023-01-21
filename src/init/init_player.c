@@ -6,4 +6,6 @@ void init_player(t_player *player)
     player->pos_y = 0;
     player->dir_x = -1;
     player->dir_y = 0;
+    player->rotate = 0;
+    player->rotate_speed = 0.5;
 }

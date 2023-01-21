@@ -27,6 +27,14 @@
         "unordered_map": "c",
         "vector": "c",
         "ios": "c",
-        "iterator": "c"
+        "iterator": "c",
+        "algorithm": "c",
+        "player.h": "c",
+        "camera.h": "c",
+        "frame.h": "c",
+        "math.h": "c",
+        "key.h": "c",
+        "__locale": "c",
+        "locale": "c"
     }
 }

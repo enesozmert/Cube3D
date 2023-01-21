@@ -2,13 +2,13 @@
 #define GAME_H
 
 #include "map.h"
-#include "player.h"
 #include "camera.h"
 #include "frame.h"
 #include "screen.h"
 #include "ray.h"
 #include "wlx.h"
 #include "draw.h"
+#include "player.h"
 
 typedef struct s_game
 {

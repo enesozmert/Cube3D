@@ -7,6 +7,7 @@ typedef struct s_frame
     int height;
     double time;
     double old_time;
+    double frame_time;
 }   t_frame;
 
 

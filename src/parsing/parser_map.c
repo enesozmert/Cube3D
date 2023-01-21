@@ -52,7 +52,6 @@ int parser_map(t_map *map)
 	map->texture_dirs[5].texture_path = NULL;
 	map->texture_dirs[5].fd_start_index = 0;
 	map->texture_dirs[5].index = 0;
-
 	close(map->fd);
     return (0);
 }
