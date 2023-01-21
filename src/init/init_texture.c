@@ -1,6 +1,6 @@
 #include "../../include/header.h"
 
-int init_texture(t_game *game)
+void init_texture(t_game *game)
 {
 	int i;
 
@@ -13,5 +13,4 @@ int init_texture(t_game *game)
 														 &(game->texture[i].data.bits_per_pixel), &(game->texture[i].data.line_length),
 														 &(game->texture[i].data.endian));
 	}
-	return (0);
 }

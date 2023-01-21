@@ -46,7 +46,7 @@ RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_heigh
 GNL				= 	gnl
 INIT			= 	init_map init_floor init_ceiling init_texture_dirs \
 					init_player init_camera init_frame init_screen init_ray \
-					init_draw init_texture
+					init_draw init_texture init_tmp_data
 
 FORMAT			= 	format_floor format_ceiling format_texture_dir
 

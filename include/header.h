@@ -66,7 +66,8 @@ void init_player(t_player *player);
 void init_screen(t_screen *screen);
 void init_ray(t_ray *ray);
 void init_draw(t_draw *draw);
-int	init_texture(t_game *game);
+void init_texture(t_game *game);
+void init_tmp_data(t_game *game);
 
 // format
 int format_texture_dir(char *texture_dir, t_map *map);
@@ -77,10 +78,10 @@ int format_floor(char *floor, t_map *map);
 int				draw_screen(t_game *game);
 int				draw_pixel_height(t_game *game);
 int				draw_texture_calculate(t_game *game);
-t_draw          *draw_texture_select(t_game *game, int *side);
+void            draw_texture_select(t_game *game, int *side);
 unsigned long	draw_texture_color(t_game *game, int *side);
 int				draw_wall_x(t_game *game);
-int             draw_texture(t_game *game, t_data *tmp_data, t_draw *select_texture);
+int             draw_texture(t_game *game);
 
 // raycasting
 int ray(t_game *game);

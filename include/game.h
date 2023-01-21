@@ -20,8 +20,9 @@ typedef struct s_game
     t_screen	screen;
     t_ray       ray;
     t_draw      draw;
-    t_data      tmp_data;
     t_draw      texture[4];
+    t_draw      *select_texture;
+    t_data      tmp_data;
 }	t_game;
 
 
