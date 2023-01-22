@@ -13,6 +13,7 @@ typedef struct s_player
     double  rotate;
     double  rotate_speed;
 	char	dir;
+    double  move_speed;
 }   t_player;
 
 #endif

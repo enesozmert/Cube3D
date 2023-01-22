@@ -2,7 +2,6 @@
 
 int ray_update(t_game *game)
 {
-    time_t seconds;
     int step_x;
     int step_y;
     int side;
@@ -12,7 +11,7 @@ int ray_update(t_game *game)
     side = 0;
     game->ray.per_pixel_x = -1;
     init_tmp_data(game);
-    game->frame.old_time = time(&seconds);
+    clock_gettime(CLOCK_MONOTONIC, &game->frame.old_time);
     while (++game->ray.per_pixel_x < game->screen.width)
     {
         ray(game);
@@ -27,10 +26,9 @@ int ray_update(t_game *game)
         draw_texture(game);
     }
     mlx_put_image_to_window(game->wlx.mlx, game->wlx.win, game->tmp_data.img, 0, 0);
-    ray_time(game);
 	mlx_destroy_image(game->wlx.mlx, game->tmp_data.img);
-    ft_putnbr_fd(1.0 / game->frame.frame_time, 1);
-    ft_putchar_fd('\n', 1);
-    // printf("xxxx : %0.2f", 1.0 / game->frame.frame_time);
+    ray_time(game);
+    // printf("Time taken to draw line: %f\n", game->frame.frame_time);
+    // printf("FPS: %f\n", 1.0 / game->frame.frame_time);
     return (0);
 }

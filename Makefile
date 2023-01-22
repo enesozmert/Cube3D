@@ -38,7 +38,7 @@ CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extensi
 					get_map_height get_time
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
 					draw_wall_x draw_texture draw_texture_select
-EVENTS			= 	event_close event_key_down
+EVENTS			= 	event_close event_key_down key_close key_player_rotate key_player_move
 PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_height \
@@ -50,7 +50,8 @@ INIT			= 	init_map init_floor init_ceiling init_texture_dirs \
 					init_all
 
 FORMAT			= 	format_floor format_ceiling format_texture_dir
-PLAYER			=	player_rotate get_player_position get_player_dir player_select_rotate
+PLAYER			=	player_rotate get_player_position get_player_dir player_select_rotate \
+					player_position_is_wall player_move
 
 #FileCreate 
 SRC_FILES		+=	$(addprefix $(SRC_COMMON),$(COMMON))

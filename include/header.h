@@ -12,6 +12,7 @@
 #include <float.h>
 #include <time.h>
 #include <sys/time.h>
+#include <mach/mach_time.h>
 
 #include "../libraries/libft/libft.h"
 #include "../libraries/minilibx/mlx.h"
@@ -100,7 +101,9 @@ int get_player_dir(t_game *game);
 int player_rotate(t_game *game);
 int player_select_rotate(t_game *game);
 int get_player_position(t_game *game);
-
+int player_position_is_wall(t_game *game, int map_x, int map_y);
+int player_move_ad(t_game *game, int x, int y);
+int player_move_ws(t_game *game, int x, int y);
 //frame
 int ray_time(t_game *game);
 

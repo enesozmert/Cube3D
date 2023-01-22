@@ -5,8 +5,8 @@ typedef struct s_frame
 {
     int width;
     int height;
-    double time;
-    double old_time;
+    struct timespec time;
+    struct timespec old_time;
     double frame_time;
 }   t_frame;
 

@@ -1,7 +1,8 @@
 #ifndef KEY_H
 #define KEY_H
 
-enum {
+enum
+{
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
 	ON_MOUSEDOWN = 4,
@@ -11,7 +12,19 @@ enum {
 	ON_DESTROY = 17
 };
 
+enum 
+{
+	MACOS_LEFT = 123,
+	MACOS_RIGHT = 124,
+	MACOS_W = 13,
+	MACOS_A = 0,
+	MACOS_S = 1,
+	MACOS_D = 2
+};
+
 int event_close(t_game *game);
+int key_close(int key_code, t_game *game);
 int event_key_down(int key_code, t_game *game);
-int evet_player_rotate(t_game *game);
+int key_player_rotate(int key_code, t_game *game);
+int key_player_move(int key_code, t_game *game);
 #endif
