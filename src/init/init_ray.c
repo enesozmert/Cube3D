@@ -6,7 +6,7 @@ void init_ray(t_ray *ray)
     ray->map_x = 0;
     ray->map_y = 0;
     ray->dir_x = 0;
-    ray->dir_x = 0;
+    ray->dir_y = 0;
     ray->delta_dist_x = 0;
     ray->delta_dist_y = 0;
     ray->side_dist_x = 0;

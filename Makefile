@@ -38,7 +38,8 @@ CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extensi
 					get_map_height get_time
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
 					draw_wall_x draw_texture draw_texture_select
-EVENTS			= 	event_close event_key_down key_close key_player_rotate key_player_move
+EVENTS			= 	event_close event_key_down key_close \
+					key_player_rotate key_player_move key_player_jump
 PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_height \
