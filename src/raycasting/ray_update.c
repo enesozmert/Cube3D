@@ -2,26 +2,19 @@
 
 int ray_update(t_game *game)
 {
-    int step_x;
-    int step_y;
-    int side;
-
-    step_x = 0;
-    step_y = 0;
-    side = 0;
     game->ray.per_pixel_x = -1;
     init_tmp_data(game);
     clock_gettime(CLOCK_MONOTONIC, &game->frame.old_time);
     while (++game->ray.per_pixel_x < game->screen.width)
     {
         ray(game);
-        ray_steps(game, &step_x, &step_y);
-        ray_hit(game, &step_x, &step_y, &side);
-        ray_fisheye_fixed(game, &side);
+        ray_steps(game);
+        ray_hit(game);
+        ray_fisheye_fixed(game);
         ray_wall_height(game);
         draw_pixel_height(game);
         draw_wall_x(game);
-        draw_texture_select(game, &side);
+        draw_texture_select(game);
         draw_texture_calculate(game);
         draw_texture(game);
     }

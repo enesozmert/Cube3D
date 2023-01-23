@@ -1,8 +1,8 @@
 #include "../../include/header.h"
 
-unsigned long draw_texture_color(t_game *game, int *side)
+unsigned long draw_texture_color(t_game *game)
 {
-    if (*side == 1)
+    if (game->ray.side == 1)
     {
         if ((game->ray.dir_x <= 0 && game->ray.dir_y <= 0) || (game->ray.dir_x >= 0 && game->ray.dir_y <= 0))
             return (rgb_hex(255,0,0));

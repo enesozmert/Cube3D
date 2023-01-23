@@ -35,6 +35,9 @@
         "math.h": "c",
         "key.h": "c",
         "__locale": "c",
-        "locale": "c"
+        "locale": "c",
+        "exception.h": "c",
+        "ceiling.h": "c",
+        "map.h": "c"
     }
 }
