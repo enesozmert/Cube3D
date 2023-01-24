@@ -23,12 +23,14 @@ enum
 	MACOS_SPACE = 49
 };
 
+typedef struct s_key
+{
+	int is_w;
+	int is_a;
+	int is_s;
+	int is_d;
+	int is_left;
+	int is_right;
+}	t_key;
 
-int event_close(t_game *game);
-int event_key_up(int key_code, t_game *game);
-int event_key_down(int key_code, t_game *game);
-int key_close(int key_code, t_game *game);
-int key_player_rotate(int key_code, t_game *game);
-int key_player_move(int key_code, t_game *game);
-int key_player_jump(int key_code, t_game *game);
 #endif

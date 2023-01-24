@@ -9,4 +9,5 @@ void init_all(t_game *game)
     init_screen(&game->screen);
     init_ray(&game->ray);
     init_draw(&game->draw);
+    init_key(&game->key);
 }

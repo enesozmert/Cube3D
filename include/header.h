@@ -106,5 +106,13 @@ int player_move_ad(t_game *game, int x, int y);
 int player_move_ws(t_game *game, int x, int y);
 //frame
 int ray_time(t_game *game);
-
+//key
+int event_close(t_game *game);
+int event_key_up(int key_code, t_game *game);
+int event_key_down(int key_code, t_game *game);
+int key_close(int key_code, t_game *game);
+int key_player_rotate(t_game *game);
+int key_player_move(t_game *game);
+int key_player_jump(int key_code, t_game *game);
+void init_key(t_key *key);
 #endif

@@ -21,7 +21,7 @@ int ray_update(t_game *game)
     mlx_put_image_to_window(game->wlx.mlx, game->wlx.win, game->tmp_data.img, 0, 0);
 	mlx_destroy_image(game->wlx.mlx, game->tmp_data.img);
     ray_time(game);
-    // printf("Time taken to draw line: %f\n", game->frame.frame_time);
-    // printf("FPS: %f\n", 1.0 / game->frame.frame_time);
+    key_player_move(game);
+    key_player_rotate(game);
     return (0);
 }

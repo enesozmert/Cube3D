@@ -17,17 +17,45 @@ int map_error(t_map map)
 		width = (int)ft_strlen(map.matris[y]) - 1;
 		while (map.matris[y][x])
 		{
-			if (map.matris[0][x] != '1' && y == 0)
+			if (map.matris[0][x] != '1' && map.matris[0][x] != ' ' && y == 0)
 				return (404);
-			if (map.matris[y][0] != '1' && x == 0)
+			if (map.matris[y][0] != '1' && map.matris[y][0] != ' ' && x == 0)
 				return (403);
-			if (map.matris[y][width] != '1' && x == width)
+			if (map.matris[y][width] != '1' && map.matris[y][width] != ' ' && x == width)
 				return (402);
-			if (map.matris[height][x] != '1' && y == height)
+			if (map.matris[height][x] != '1' && map.matris[height][x] != ' ' && y == height)
 				return (401);
 			x++;
 		}
 		y++;
+	}
+	return (0);
+}
+
+int map_error_space(t_map map)
+{
+	int x;
+	int y;
+
+	y = -1;
+	while (map.matris[++y])
+	{
+		x = 0;
+		while (map.matris[y][x])
+		{
+			if (map.matris[y][x] == '0')
+			{
+				if (map.matris[y + 1][x] == ' ' || map.matris[y + 1][x] == '\0')
+					return (504);
+				if (map.matris[y][x + 1] == ' ' || map.matris[y][x + 1] == '\0')
+					return (503);
+				if (map.matris[y][x - 1] == ' ' || map.matris[y][x - 1] == '\0')
+					return (502);
+				if (map.matris[y - 1][x] == ' ' || map.matris[y - 1][x] == '\0')
+					return (501);
+			}
+			x++;	
+		}
 	}
 	return (0);
 }
@@ -62,6 +90,13 @@ int header_location_error(t_map map)
 	return (0);
 }
 
+
+int item_invalid_error(t_map map)
+{
+	(void)map;
+	return (0);
+}
+
 int item_single_error(t_map map)
 {
 	int		i;
@@ -71,21 +106,9 @@ int item_single_error(t_map map)
 	i = -1;
 	result = 0;
 	get_posible_single_items = ft_split(map.possible_single_items, ',');
-	while (get_posible_single_items[++i])
+	while (++i < 4)
 		result += get_block_count(&map, get_posible_single_items[i][0]);
-	if (result < 1 || result > 1)
+	if (result != 1)
 		return (204);
-	return (0);
-}
-
-int file_error(t_map map)
-{
-	char *str;
-
-	if (map.fd < 0)
-		return (504);
-	str = ft_strchr(map.path, '.');
-	if (ft_strnstr(&str[0], map.extension, ft_strlen(map.path)) == NULL)
-		return (502);
 	return (0);
 }

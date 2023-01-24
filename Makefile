@@ -31,7 +31,7 @@ SRC_PLAYER		=	player/
 
 #Files
 COMMON			= 	main routine read_map
-EXCEPTION		= 	exception map_error argc_error
+EXCEPTION		= 	exception map_error file_error player_error
 CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
 					get_file_extension is_valid_filename is_valid_path get_str_char_count block_count \
 					is_valid_rgb rgb_hex int_rgb \
@@ -47,7 +47,7 @@ RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_heigh
 GNL				= 	gnl
 INIT			= 	init_map init_floor init_ceiling init_texture_dirs \
 					init_player init_camera init_frame init_screen init_ray \
-					init_draw init_texture init_tmp_data \
+					init_draw init_texture init_tmp_data init_key\
 					init_all
 
 FORMAT			= 	format_floor format_ceiling format_texture_dir

@@ -40,7 +40,10 @@ int parser_map(t_map *map)
 			// printf("format_textture_dir ok , i : %d\n", i);
 		}
 		if (i > 5)
-			map->matris[line_i++] = ft_strdup(ft_tmp_line);
+		{
+			map->matris[line_i++] = ft_strdup(ft_strtrim(line, "\n"));
+		}
+		free(ft_tmp_line);
 		free(tmp_line);
 		free(line);
 		if (!(line[0] == '\n' && ft_strlen(line) == 1))

@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     //draw
     draw_screen(&game);
     init_texture(&game);
-    game.map.matris[(int)game.player.pos_x][(int)game.player.pos_y] = '0';
+    game.map.matris[(int)game.player.pos_y][(int)game.player.pos_x] = '0';
     mlx_hook(game.wlx.win, ON_KEYDOWN, 1L<<0, event_key_down, &game);
     mlx_hook(game.wlx.win, ON_KEYUP, 1L<<1, event_key_up, &game);
     mlx_hook(game.wlx.win, ON_DESTROY, 0, event_close, &game);
