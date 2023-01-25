@@ -9,6 +9,10 @@ int format_floor(char *floor, t_map *map)
         return (0);
 	rgb = ft_substr(floor, 2, ft_strlen(floor));
 	if (!is_valid_rgb(rgb))
+    {
+        free(rgb);
 		return (0);
+    }
+    free(rgb);
     return (1);
 }

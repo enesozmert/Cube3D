@@ -9,6 +9,10 @@ int format_ceiling(char *ceiling, t_map *map)
         return (0);
 	rgb = ft_substr(ceiling, 2, ft_strlen(ceiling));
 	if (!is_valid_rgb(rgb))
+    {
+        free(rgb);
 		return (0);
+    }
+    free(rgb);
     return (1);
 }

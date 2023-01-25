@@ -17,8 +17,10 @@ int get_player_dir(t_game *game)
         if (player_position[i] > 0)
         {
             game->player.dir = get_posible_single_items[i][0];
+            free_double_str(get_posible_single_items);
             return (1);
         }
     }
+    free_double_str(get_posible_single_items);
 	return (0);
 }

@@ -17,8 +17,14 @@ int format_texture_dir(char *texture_dir, t_map *map)
         if (ft_strncmp(dir, get_possible_texture_dir[i], ft_strlen(dir)) == 0)
             flag = 1;
     }
+    free(dir);
+    free_double_str(get_possible_texture_dir);
     path = ft_substr(texture_dir, 3, ft_strlen(texture_dir));
     if (!flag || texture_dir[2] != ' ' || !is_valid_path(path))
+    {
+        free(path);
         return (0);
+    }
+    free(path);
     return (1);
 }

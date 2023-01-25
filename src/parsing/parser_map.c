@@ -5,6 +5,7 @@ int parser_map(t_map *map)
     char	*line;
 	char	*tmp_line;
 	char	*ft_tmp_line;
+	char	*ft_map_tmp_line;
 	int 	i;
 	int		line_i;
 
@@ -41,7 +42,9 @@ int parser_map(t_map *map)
 		}
 		if (i > 5)
 		{
-			map->matris[line_i++] = ft_strdup(ft_strtrim(line, "\n"));
+			ft_map_tmp_line = ft_strtrim(line, "\n");
+			map->matris[line_i++] = ft_strdup(ft_map_tmp_line);
+			free(ft_map_tmp_line);
 		}
 		free(ft_tmp_line);
 		free(tmp_line);
