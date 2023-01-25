@@ -89,26 +89,3 @@ int header_location_error(t_map map)
 		return (103);
 	return (0);
 }
-
-
-int item_invalid_error(t_map map)
-{
-	(void)map;
-	return (0);
-}
-
-int item_single_error(t_map map)
-{
-	int		i;
-	int		result;
-	char	**get_posible_single_items;
-
-	i = -1;
-	result = 0;
-	get_posible_single_items = ft_split(map.possible_single_items, ',');
-	while (++i < 4)
-		result += get_block_count(&map, get_posible_single_items[i][0]);
-	if (result != 1)
-		return (204);
-	return (0);
-}

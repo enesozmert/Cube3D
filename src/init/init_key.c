@@ -8,4 +8,6 @@ void init_key(t_key *key)
     key->is_d = 0;
     key->is_left = 0;
     key->is_right = 0;
+    key->is_esc = 0;
+    key->is_space = 0;
 }

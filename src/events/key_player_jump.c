@@ -1,11 +1,8 @@
 #include "../../include/header.h"
 
-int key_player_jump(int key_code, t_game *game)
+int key_player_jump(t_game *game)
 {
-    int i;
-
-    i = -1;
-    if (key_code == MACOS_SPACE)
+    if (game->key.is_space)
         game->player.jump_size = 10;
     return (0);
 }

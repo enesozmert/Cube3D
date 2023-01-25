@@ -16,5 +16,9 @@ int event_key_up(int key_code, t_game *game)
         game->key.is_left = 0;
     if (key_code == MACOS_RIGHT)
         game->key.is_right = 0;
+    if (key_code == MACOS_ESC)
+        game->key.is_esc = 0;
+    if (key_code == MACOS_SPACE)
+        game->key.is_space = 0;
     return (0);
 }

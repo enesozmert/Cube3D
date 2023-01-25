@@ -21,6 +21,8 @@ int ray_update(t_game *game)
     mlx_put_image_to_window(game->wlx.mlx, game->wlx.win, game->tmp_data.img, 0, 0);
 	mlx_destroy_image(game->wlx.mlx, game->tmp_data.img);
     ray_time(game);
+    key_close(game);
+    key_player_jump(game);
     key_player_move(game);
     key_player_rotate(game);
     return (0);

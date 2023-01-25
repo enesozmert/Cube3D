@@ -28,13 +28,14 @@ SRC_GNL			=	gnl/
 SRC_INIT		=	init/
 SRC_FORMAT		=	format/
 SRC_PLAYER		=	player/
+SRC_STATIC		=	static/
 
 #Files
 COMMON			= 	main routine read_map
-EXCEPTION		= 	exception map_error file_error player_error
+EXCEPTION		= 	exception map_error file_error player_error item_error
 CORE			= 	core ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
 					get_file_extension is_valid_filename is_valid_path get_str_char_count block_count \
-					is_valid_rgb rgb_hex int_rgb \
+					is_valid_rgb rgb_hex int_rgb free_double_str\
 					get_map_height get_time
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
 					draw_wall_x draw_texture draw_texture_select
@@ -52,7 +53,8 @@ INIT			= 	init_map init_floor init_ceiling init_texture_dirs \
 
 FORMAT			= 	format_floor format_ceiling format_texture_dir
 PLAYER			=	player_rotate get_player_position get_player_dir player_select_rotate \
-					player_position_is_wall player_move
+					player_position_is_wall player_move player
+STATIC			=	static_exception
 
 #FileCreate 
 SRC_FILES		+=	$(addprefix $(SRC_COMMON),$(COMMON))
@@ -66,6 +68,7 @@ SRC_FILES		+=	$(addprefix $(SRC_GNL),$(GNL))
 SRC_FILES		+=	$(addprefix $(SRC_INIT),$(INIT))
 SRC_FILES		+=	$(addprefix $(SRC_FORMAT),$(FORMAT))
 SRC_FILES		+=	$(addprefix $(SRC_PLAYER),$(PLAYER))
+SRC_FILES		+=	$(addprefix $(SRC_STATIC),$(STATIC))
 
 SRC 			= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 			= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -87,6 +90,7 @@ $(OBJF):
 			@mkdir -p $(OBJ_DIR)$(SRC_INIT)
 			@mkdir -p $(OBJ_DIR)$(SRC_FORMAT)
 			@mkdir -p $(OBJ_DIR)$(SRC_PLAYER)
+			@mkdir -p $(OBJ_DIR)$(SRC_STATIC)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJF)
 			@$(CC) $(CFLAGS) -c $< -o $@

@@ -20,7 +20,8 @@ enum
 	MACOS_A = 0,
 	MACOS_S = 1,
 	MACOS_D = 2,
-	MACOS_SPACE = 49
+	MACOS_SPACE = 49,
+	MACOS_ESC = 53,
 };
 
 typedef struct s_key
@@ -31,6 +32,8 @@ typedef struct s_key
 	int is_d;
 	int is_left;
 	int is_right;
+	int is_esc;
+	int is_space;
 }	t_key;
 
 #endif

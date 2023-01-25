@@ -2,8 +2,6 @@
 
 int event_key_down(int key_code, t_game *game)
 {
-    key_close(key_code, game);
-    key_player_jump(key_code, game);
     if (key_code == MACOS_A)
         game->key.is_a = 1;
     if (key_code == MACOS_D)
@@ -16,5 +14,9 @@ int event_key_down(int key_code, t_game *game)
         game->key.is_left = 1;
     if (key_code == MACOS_RIGHT)
         game->key.is_right = 1;
+    if (key_code == MACOS_ESC)
+        game->key.is_esc = 1;
+    if (key_code == MACOS_SPACE)
+        game->key.is_space = 1;
     return (0);
 }

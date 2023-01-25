@@ -47,6 +47,7 @@ int *int_rgb(char *str);
 int get_map_height(char *path);
 void my_mlx_pixel_put(t_data *data, int x, int y, int color);
 long get_time(void);
+void free_double_str(char **str);
 int core();
 
 // common
@@ -104,15 +105,18 @@ int get_player_position(t_game *game);
 int player_position_is_wall(t_game *game, int map_x, int map_y);
 int player_move_ad(t_game *game, int x, int y);
 int player_move_ws(t_game *game, int x, int y);
-//frame
+void player(t_game *game);
+// frame
 int ray_time(t_game *game);
-//key
+// key
 int event_close(t_game *game);
 int event_key_up(int key_code, t_game *game);
 int event_key_down(int key_code, t_game *game);
-int key_close(int key_code, t_game *game);
+int key_close(t_game *game);
 int key_player_rotate(t_game *game);
 int key_player_move(t_game *game);
-int key_player_jump(int key_code, t_game *game);
+int key_player_jump(t_game *game);
 void init_key(t_key *key);
+// static
+void static_exception(t_exception *exception);
 #endif

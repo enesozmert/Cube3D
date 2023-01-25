@@ -1,8 +1,8 @@
 #include "../../include/header.h"
 
-int key_close(int key_code, t_game *game)
+int key_close(t_game *game)
 {
-    if (key_code == 53)
+    if (game->key.is_esc)
         event_close(game);
     return (0);
 }
