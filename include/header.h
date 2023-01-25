@@ -48,10 +48,9 @@ int get_map_height(char *path);
 void my_mlx_pixel_put(t_data *data, int x, int y, int color);
 long get_time(void);
 void free_double_str(char **str);
-int core();
 
 // common
-int routine();
+int routine(t_game *game);
 int read_map(char *path, t_map *map);
 
 // parsing

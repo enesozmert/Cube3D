@@ -23,6 +23,7 @@ int is_valid_rgb(char *str)
             return (0);
         rgb[count] = ft_atoi(get_rgb[count]);
     }
+    free(get_rgb);
     if (rgb[0] < 0 || rgb[0] > 255 || rgb[1] < 0 || rgb[1] > 255 || rgb[2] < 0 || rgb[2] > 255)
         return (0);
     return (1);

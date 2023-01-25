@@ -9,9 +9,7 @@ int is_valid_path(char* path)
     len = (int)ft_strlen(path);
     i = 1;
     has_directory = 0;
-    if (path[0] != '.')
-        return (0);
-    if (path[i] != '/' && path[i] != '\\')
+    if (path[0] != '.' || (path[i] != '/' && path[i] != '\\'))
         return (0);
     while (i < len) {
         if (path[i] == '/' || path[i] == '\\') {

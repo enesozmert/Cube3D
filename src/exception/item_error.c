@@ -32,6 +32,7 @@ int item_single_error(t_map map)
 	get_posible_single_items = ft_split(map.possible_single_items, ',');
 	while (++i < 4)
 		result += get_block_count(&map, get_posible_single_items[i][0]);
+    free_double_str(get_posible_single_items);
 	if (result != 1)
 		return (204);
 	return (0);
