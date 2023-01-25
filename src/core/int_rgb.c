@@ -14,8 +14,12 @@ int *int_rgb(char *str)
     while (get_rgb[++i])
     {
         if (get_str_char_count(str, ' ') > 0)
+        {
+            free_double_str(get_rgb);
             return (0);
+        }
         rgb[i] = ft_atoi(get_rgb[i]);
     }
+    free_double_str(get_rgb);
     return (rgb);
 }

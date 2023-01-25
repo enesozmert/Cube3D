@@ -22,7 +22,13 @@ int dir_file_error(t_map map)
 	{
 		fd[i] = open(map.texture_dirs[i].texture_path, O_RDONLY);
 		if (fd[i] < 0)
+		{
+			close(fd[i]);
 			return (800 + i + 1);
+		}
 	}
+	i = -1;
+	while (++i < 4)
+		close(fd[i]);
 	return (0);
 }

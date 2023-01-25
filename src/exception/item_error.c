@@ -5,7 +5,6 @@ int item_wrong_error(t_map map)
 	int x;
     int y;
 
-    x = 0;
     y = 0;
     while (map.matris[y])
     {

@@ -3,6 +3,7 @@
 int main(int argc, char *argv[])
 {
     t_game game;
+
     init_all(&game);
     if (argc != 2)
         return (0);
