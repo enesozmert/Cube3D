@@ -14,8 +14,13 @@
 
 int	parser_map(t_map *map)
 {
+<<<<<<< HEAD
 	int		i;
 	char	*line;
+=======
+	int 	i;
+    char	*line;
+>>>>>>> 8b5f32c87b52380a22e4ce4ebdb0f87788063ce4
 	char	*tmp_line;
 	char	*ft_tmp_line;
 	char	*ft_map_tmp_line;
@@ -23,12 +28,20 @@ int	parser_map(t_map *map)
 
 	i = 0;
 	line_i = 0;
+<<<<<<< HEAD
 	line = NULL;
 	tmp_line = NULL;
 	ft_tmp_line = NULL;
 	ft_map_tmp_line = NULL;
 	line = get_next_line(map->fd);
 	while (line != NULL)
+=======
+    line = NULL;
+	tmp_line = NULL;
+	ft_tmp_line = NULL;
+	ft_map_tmp_line = NULL;
+    while ((line = get_next_line(map->fd)) != NULL)
+>>>>>>> 8b5f32c87b52380a22e4ce4ebdb0f87788063ce4
 	{
 		if (line[0] == '\n' && ft_strlen(line) == 1)
 			line = get_next_line(map->fd);

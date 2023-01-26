@@ -35,4 +35,12 @@ int	get_map_height(char *path)
 	}
 	close(map_fd);
 	return (i);
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 875c2fed454e357818e7313581ee2e11251d1b86
+>>>>>>> 8b5f32c87b52380a22e4ce4ebdb0f87788063ce4

@@ -17,6 +17,10 @@ int	item_wrong_error(t_map map)
 	int	x;
 	int	y;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8b5f32c87b52380a22e4ce4ebdb0f87788063ce4
 	y = 0;
 	while (map.matris[y])
 	{
@@ -29,6 +33,23 @@ int	item_wrong_error(t_map map)
 		}
 		y++;
 	}
+<<<<<<< HEAD
+=======
+=======
+    y = 0;
+    while (map.matris[y])
+    {
+        x = 0;
+        while (map.matris[y][x])
+        {
+            if (!ft_strchr(map.possible_items, map.matris[y][x]))
+                return (203);
+            x++;
+        }
+        y++;
+    }
+>>>>>>> 875c2fed454e357818e7313581ee2e11251d1b86
+>>>>>>> 8b5f32c87b52380a22e4ce4ebdb0f87788063ce4
 	return (0);
 }
 
