@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_error.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 17:55:28 by eozmert           #+#    #+#             */
+/*   Updated: 2023/01/25 17:58:17 by eozmert          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/header.h"
 
-int map_error(t_map map)
+int	map_error(t_map map)
 {
-	int x;
-	int y;
-	int height;
-	int width;
+	int	x;
+	int	y;
+	int	height;
+	int	width;
 
 	x = 0;
 	y = 0;
@@ -21,9 +33,11 @@ int map_error(t_map map)
 				return (404);
 			if (map.matris[y][0] != '1' && map.matris[y][0] != ' ' && x == 0)
 				return (403);
-			if (map.matris[y][width] != '1' && map.matris[y][width] != ' ' && x == width)
+			if (map.matris[y][width] != '1' \
+			&& map.matris[y][width] != ' ' && x == width)
 				return (402);
-			if (map.matris[height][x] != '1' && map.matris[height][x] != ' ' && y == height)
+			if (map.matris[height][x] != '1' \
+			&& map.matris[height][x] != ' ' && y == height)
 				return (401);
 			x++;
 		}
@@ -32,10 +46,10 @@ int map_error(t_map map)
 	return (0);
 }
 
-int map_error_space(t_map map)
+int	map_error_space(t_map map)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = -1;
 	while (map.matris[++y])
@@ -54,15 +68,15 @@ int map_error_space(t_map map)
 				if (map.matris[y - 1][x] == ' ' || map.matris[y - 1][x] == '\0')
 					return (501);
 			}
-			x++;	
+			x++;
 		}
 	}
 	return (0);
 }
 
-int header_count_error(t_map map)
+int	header_count_error(t_map map)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < 4)
@@ -75,9 +89,9 @@ int header_count_error(t_map map)
 	return (0);
 }
 
-int header_location_error(t_map map)
+int	header_location_error(t_map map)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < 4)

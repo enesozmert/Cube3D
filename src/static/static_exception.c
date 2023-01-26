@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   static_exception.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/26 10:49:20 by eozmert           #+#    #+#             */
+/*   Updated: 2023/01/26 10:49:42 by eozmert          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/header.h"
 
-void static_exception(t_exception *exception)
+void	static_exception(t_exception *exception)
 {
-    exception[0] = (t_exception){702, "Map Name", map_file_error};
+	exception[0] = (t_exception){702, "Map Name", map_file_error};
 	exception[1] = (t_exception){704, "Map Not Found", map_file_error};
 	exception[2] = (t_exception){803, "Not Found NO", dir_file_error};
 	exception[3] = (t_exception){801, "Not Found WE", dir_file_error};

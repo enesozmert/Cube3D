@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/25 16:25:43 by eozmert           #+#    #+#             */
+/*   Updated: 2023/01/25 16:25:44 by eozmert          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef KEY_H
-#define KEY_H
+# define KEY_H
 
 enum
 {
@@ -12,7 +24,7 @@ enum
 	ON_DESTROY = 17
 };
 
-enum 
+enum
 {
 	MACOS_LEFT = 123,
 	MACOS_RIGHT = 124,
@@ -26,14 +38,14 @@ enum
 
 typedef struct s_key
 {
-	int is_w;
-	int is_a;
-	int is_s;
-	int is_d;
-	int is_left;
-	int is_right;
-	int is_esc;
-	int is_space;
+	int	is_w;
+	int	is_a;
+	int	is_s;
+	int	is_d;
+	int	is_left;
+	int	is_right;
+	int	is_esc;
+	int	is_space;
 }	t_key;
 
 #endif

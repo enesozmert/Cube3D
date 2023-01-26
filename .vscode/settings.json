@@ -40,6 +40,7 @@
         "ceiling.h": "c",
         "map.h": "c",
         "exception": "c",
-        "gnl.h": "c"
+        "gnl.h": "c",
+        "bitset": "c"
     }
 }

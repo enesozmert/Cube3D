@@ -32,10 +32,10 @@ SRC_STATIC		=	static/
 
 #Files
 COMMON			= 	main routine read_map
-EXCEPTION		= 	exception map_error file_error player_error item_error
+EXCEPTION		= 	exception file_error player_error item_error map_error
 CORE			= 	ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
 					get_file_extension is_valid_filename is_valid_path get_str_char_count block_count \
-					is_valid_rgb rgb_hex int_rgb free_double_str\
+					is_valid_rgb rgb_hex int_rgb free_double_str \
 					get_map_height get_time
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
 					draw_wall_x draw_texture draw_texture_select
@@ -78,47 +78,47 @@ OBJF			=	.cache_exists
 all:		welcome $(NAME)
 
 $(OBJF):
-			@mkdir -p $(OBJ_DIR)
-			@mkdir -p $(OBJ_DIR)$(SRC_COMMON)
-			@mkdir -p $(OBJ_DIR)$(SRC_CORE)
-			@mkdir -p $(OBJ_DIR)$(SRC_EXCEPTION)
-			@mkdir -p $(OBJ_DIR)$(SRC_DRAWING)
-			@mkdir -p $(OBJ_DIR)$(SRC_EVENTS)
-			@mkdir -p $(OBJ_DIR)$(SRC_PARSING)
-			@mkdir -p $(OBJ_DIR)$(SRC_RAYCASTING)
-			@mkdir -p $(OBJ_DIR)$(SRC_GNL)
-			@mkdir -p $(OBJ_DIR)$(SRC_INIT)
-			@mkdir -p $(OBJ_DIR)$(SRC_FORMAT)
-			@mkdir -p $(OBJ_DIR)$(SRC_PLAYER)
-			@mkdir -p $(OBJ_DIR)$(SRC_STATIC)
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)$(SRC_COMMON)
+	@mkdir -p $(OBJ_DIR)$(SRC_CORE)
+	@mkdir -p $(OBJ_DIR)$(SRC_EXCEPTION)
+	@mkdir -p $(OBJ_DIR)$(SRC_DRAWING)
+	@mkdir -p $(OBJ_DIR)$(SRC_EVENTS)
+	@mkdir -p $(OBJ_DIR)$(SRC_PARSING)
+	@mkdir -p $(OBJ_DIR)$(SRC_RAYCASTING)
+	@mkdir -p $(OBJ_DIR)$(SRC_GNL)
+	@mkdir -p $(OBJ_DIR)$(SRC_INIT)
+	@mkdir -p $(OBJ_DIR)$(SRC_FORMAT)
+	@mkdir -p $(OBJ_DIR)$(SRC_PLAYER)
+	@mkdir -p $(OBJ_DIR)$(SRC_STATIC)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJF)
-			@$(CC) $(CFLAGS) -c $< -o $@
-			@echo Compiling Success file is : $< $(SRC_DIR) $@ 
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo Compiling Success file is : $< $(SRC_DIR) $@ 
 
 norm:
-			@norminette $(SRC) | grep -v Norme -B1 || true
-			@echo Norminatte exception
+	@norminette $(SRC) | grep -v Norme -B1 || true
+	@echo Norminatte exception
 
 
 $(NAME):	$(OBJ)
-			@$(CC) $(OBJ) $(CFLAGS) $(LFLAGS) -o $(NAME) $(LIBFT) $(MINILIBX)
-			@echo $(NAME) compiled!
+	@$(CC) $(OBJ) $(CFLAGS) $(LFLAGS) -o $(NAME) $(LIBFT) $(MINILIBX)
+	@echo $(NAME) compiled!
 
 clean:
-			@$(RM) -rf $(OBJ_DIR)
-			@$(RM) -f $(OBJF)const
-			@echo Objects files cleaned!
+	@$(RM) -rf $(OBJ_DIR)
+	@$(RM) -f $(OBJF)const
+	@echo Objects files cleaned!
 
 fclean:		clean
-			@$(RM) -f $(NAME)
-			@echo $(NAME) executable files cleaned!
+	@$(RM) -f $(NAME)
+	@echo $(NAME) executable files cleaned!
 
 re:			fclean all
-			@echo Cleaned and rebuilt
+	@echo Cleaned and rebuilt
 
 welcome:
-			@echo "Cube3d delle"
-			@echo "\n"
+	@echo "Cube3d delle"
+	@echo "\n"
 
 .PHONY:		all clean fclean re bonus norm

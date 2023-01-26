@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/26 10:10:14 by eozmert           #+#    #+#             */
+/*   Updated: 2023/01/26 10:10:17 by eozmert          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/header.h"
 
-void init_map(t_map *map)
+void	init_map(t_map *map)
 {
 	map->floor = malloc(sizeof(t_floor) * 2);
 	init_floor(map);
