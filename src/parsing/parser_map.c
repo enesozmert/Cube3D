@@ -14,8 +14,8 @@
 
 int	parser_map(t_map *map)
 {
-	int		i;
-	char	*line;
+	int 	i;
+    char	*line;
 	char	*tmp_line;
 	char	*ft_tmp_line;
 	char	*ft_map_tmp_line;
@@ -23,12 +23,11 @@ int	parser_map(t_map *map)
 
 	i = 0;
 	line_i = 0;
-	line = NULL;
+    line = NULL;
 	tmp_line = NULL;
 	ft_tmp_line = NULL;
 	ft_map_tmp_line = NULL;
-	line = get_next_line(map->fd);
-	while (line != NULL)
+    while ((line = get_next_line(map->fd)) != NULL)
 	{
 		if (line[0] == '\n' && ft_strlen(line) == 1)
 			line = get_next_line(map->fd);

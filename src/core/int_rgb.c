@@ -18,6 +18,7 @@ int	*int_rgb(char *str)
 	int		*rgb;
 	char	**get_rgb;
 
+<<<<<<< HEAD
 	if (!is_valid_rgb(str))
 		return (0);
 	rgb = malloc(sizeof(int) * 3);
@@ -31,3 +32,22 @@ int	*int_rgb(char *str)
 	}
 	return (rgb);
 }
+=======
+    if (!is_valid_rgb(str))
+        return (0);
+    rgb = malloc(sizeof(int) * 3);
+    get_rgb = ft_split(str, ',');
+    i = -1;
+    while (get_rgb[++i])
+    {
+        if (get_str_char_count(str, ' ') > 0)
+        {
+            free_double_str(get_rgb);
+            return (0);
+        }
+        rgb[i] = ft_atoi(get_rgb[i]);
+    }
+    free_double_str(get_rgb);
+    return (rgb);
+}
+>>>>>>> 875c2fed454e357818e7313581ee2e11251d1b86
