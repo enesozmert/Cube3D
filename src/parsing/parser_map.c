@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:08 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 10:20:05 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:00:14 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	parser_map(t_map *map)
 			line = get_next_line(map->fd);
 		tmp_line = ft_strtrim(line, " ");
 		ft_tmp_line = ft_strtrim(tmp_line, "\n");
-		ft_tmp_line[ft_strlen(ft_tmp_line)] = '\0';
+		// ft_tmp_line[ft_strlen(ft_tmp_line)] = '\0';
 		if (format_ceiling(tmp_line, map) == 1)
 		{
 			map->ceiling_count++;

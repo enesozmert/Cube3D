@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   int_rgb.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:43:27 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 16:48:25 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:02:00 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int	*int_rgb(char *str)
 			return (0);
 		rgb[i] = ft_atoi(get_rgb[i]);
 	}
+	free_double_str(get_rgb);
 	return (rgb);
 }

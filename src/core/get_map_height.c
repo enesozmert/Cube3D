@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_height.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:40:39 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 16:42:18 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 14:50:58 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	get_map_height(char *path)
 	int		i;
 	int		map_fd;
 	char	*line;
-	char	*tmp_line;
 
 	i = 0;
 	line = NULL;
@@ -25,14 +24,12 @@ int	get_map_height(char *path)
 	line = get_next_line(map_fd);
 	while (line != NULL)
 	{
-		if (line[0] == '\n' && ft_strlen(line) == 1)
-			line = get_next_line(map_fd);
-		tmp_line = ft_strtrim(line, " ");
+		if (line[0] != '\n')
+			i++;
 		free(line);
-		free(tmp_line);
 		line = get_next_line(map_fd);
-		i++;
 	}
+	free(line);
 	close(map_fd);
 	return (i);
 }

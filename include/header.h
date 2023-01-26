@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:40 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 16:57:02 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 14:50:09 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int				*int_rgb(char *str);
 int				get_map_height(char *path);
 void			my_mlx_pixel_put(t_data *data, int x, int y, int color);
 long			get_time(void);
+int				check_white_space(char *input);
 void			free_double_str(char **str);
 
 // common
@@ -106,10 +107,12 @@ int				draw_texture(t_game *game);
 // raycasting
 int				ray(t_game *game);
 int				ray_update(t_game *game);
+int				ray_loop(t_game *game);
 int				ray_steps(t_game *game);
 int				ray_hit(t_game *game);
 int				ray_fisheye_fixed(t_game *game);
 int				ray_wall_height(t_game *game);
+int				ray_length(t_game *game);
 
 // player
 int				get_player_dir(t_game *game);

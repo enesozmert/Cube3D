@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:28:32 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 16:28:33 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:02:49 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	main(int argc, char *argv[])
 		return (0);
 	read_map(argv[1], &game.map);
 	parser_map(&game.map);
-	exception_handler(game.map);
-	player(&game);
-	draw_screen(&game);
-	init_texture(&game);
-	routine(&game);
+	// exception_handler(game.map);
+	// player(&game);
+	// draw_screen(&game);
+	// init_texture(&game);
+	// routine(&game);
 	return (0);
 }

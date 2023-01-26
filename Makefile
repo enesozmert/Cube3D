@@ -36,7 +36,7 @@ EXCEPTION		= 	exception file_error player_error item_error map_error
 CORE			= 	ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
 					get_file_extension is_valid_filename is_valid_path get_str_char_count block_count \
 					is_valid_rgb rgb_hex int_rgb free_double_str \
-					get_map_height get_time
+					get_map_height get_time white_space
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
 					draw_wall_x draw_texture draw_texture_select
 EVENTS			= 	event_close event_key_down event_key_up\
@@ -44,7 +44,7 @@ EVENTS			= 	event_close event_key_down event_key_up\
 PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_height \
-					ray_time
+					ray_time ray_lenght ray_loop
 GNL				= 	gnl
 INIT			= 	init_map init_floor init_ceiling init_texture_dirs \
 					init_player init_camera init_frame init_screen init_ray \

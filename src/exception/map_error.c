@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:55:28 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 17:58:17 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 14:27:44 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ int	map_error(t_map map)
 	int	height;
 	int	width;
 
-	x = 0;
-	y = 0;
-	width = 0;
+	y = -1;
 	height = get_map_height(map.path) - 7;
-	while (map.matris[y])
+	while (map.matris[++y])
 	{
-		x = 0;
+		x = -1;
 		width = (int)ft_strlen(map.matris[y]) - 1;
-		while (map.matris[y][x])
+		while (map.matris[y][++x])
 		{
 			if (map.matris[0][x] != '1' && map.matris[0][x] != ' ' && y == 0)
 				return (404);
@@ -39,9 +37,7 @@ int	map_error(t_map map)
 			if (map.matris[height][x] != '1' \
 			&& map.matris[height][x] != ' ' && y == height)
 				return (401);
-			x++;
 		}
-		y++;
 	}
 	return (0);
 }
