@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:55:28 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 14:27:44 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/27 12:46:47 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	map_error_space(t_map map)
 	int	x;
 	int	y;
 
-	y = -1;
-	while (map.matris[++y])
+	y = 0;
+	while (map.matris[y])
 	{
 		x = 0;
 		while (map.matris[y][x])
@@ -66,6 +66,7 @@ int	map_error_space(t_map map)
 			}
 			x++;
 		}
+		y++;
 	}
 	return (0);
 }

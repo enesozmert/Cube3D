@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   format_floor.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:05:08 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 18:05:32 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:04:37 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	format_floor(char *floor, t_map *map)
 		return (0);
 	}
 	free(rgb);
+	map->floor_count++;
 	return (1);
 }
