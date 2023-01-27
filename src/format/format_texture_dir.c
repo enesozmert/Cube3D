@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:05:44 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 15:04:57 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/27 16:23:29 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ int	format_texture_dir(char *texture_dir, t_map *map)
 		return (0);
 	}
 	free(path);
-	map->texture_dirs_count++;
 	return (1);
 }

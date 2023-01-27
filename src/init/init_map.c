@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:10:14 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/27 12:34:46 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/27 17:32:22 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	init_map(t_map *map)
 {
-	map->floor = malloc(sizeof(t_floor) * 2);
+	map->floor = malloc(sizeof(t_floor) * 1);
 	init_floor(map);
-	map->ceiling = malloc(sizeof(t_ceiling) * 2);
+	map->ceiling = malloc(sizeof(t_ceiling) * 1);
 	init_ceiling(map);
-	map->texture_dirs = malloc(sizeof(t_texture_dir) * 5);
+	map->texture_dirs = malloc(sizeof(t_texture_dir) * 4);
 	init_texture_dirs(map);
 	map->fd = -1;
 	map->fd_start_index = -1;

@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exception.c                                        :+:      :+:    :+:   */
+/*   header_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:51:58 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/27 17:41:42 by eozmert          ###   ########.fr       */
+/*   Created: 2023/01/27 16:26:19 by eozmert           #+#    #+#             */
+/*   Updated: 2023/01/27 16:33:25 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/header.h"
 
-int	exception_handler(t_map map)
+int	header_count_error(t_map map)
 {
-	int			i;
-	int			handle_code;
-	t_exception	exception[24];
+	int	i;
 
 	i = -1;
-	handle_code = 0;
-	static_exception(exception);
-	while (exception[++i].message != NULL)
+	while (++i < 4)
 	{
-		handle_code = exception[i].f(map);
-		if (handle_code == exception[i].error_code)
-			exit(printf("Error : %d %s\n", exception[i].error_code, \
-			exception[i].message));
+		if (map.texture_dirs_count > 4)
+			return (102);
 	}
-	return (i);
+	if (map.floor_count > 1 || map.ceiling_count > 1)
+		return (102);
+	return (0);
+}
+
+int	header_location_error(t_map map)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 4)
+	{
+		if (map.texture_dirs[i].fd_start_index > 5)
+			return (103);
+	}
+	if (map.floor->fd_start_index > 5 || map.ceiling->fd_start_index > 5)
+		return (103);
+	return (0);
 }

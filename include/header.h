@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:40 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 14:50:09 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/27 17:48:51 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include <float.h>
 # include <time.h>
 # include <sys/time.h>
-# include <mach/mach_time.h>
 
 # include "../libraries/libft/libft.h"
 # include "../libraries/minilibx/mlx.h"

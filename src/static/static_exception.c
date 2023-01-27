@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   static_exception.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:49:20 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 10:49:42 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/27 17:41:56 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	static_exception(t_exception *exception)
 	exception[19] = (t_exception){503, "Space Left", map_error_space};
 	exception[20] = (t_exception){502, "Space Right", map_error_space};
 	exception[21] = (t_exception){501, "Space Down", map_error_space};
-	exception[22] = (t_exception){-1, NULL, NULL};
+	exception[22] = (t_exception){900, "Syntax Rgb", map_rgb_error};
+	exception[23] = (t_exception){-1, NULL, NULL};
 }
