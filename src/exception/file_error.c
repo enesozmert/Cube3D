@@ -6,25 +6,25 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:54:12 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 14:26:00 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:16:33 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/header.h"
 
-int	map_file_error(t_map map)
+int	map_file_error(t_map *map)
 {
 	char	*str;
 
-	if (map.fd < 0)
+	if (map->fd < 0)
 		return (704);
-	str = ft_strchr(map.path, '.');
-	if (ft_strnstr(&str[0], map.extension, ft_strlen(map.path)) == NULL)
+	str = ft_strchr(map->path, '.');
+	if (ft_strnstr(&str[0], map->extension, ft_strlen(map->path)) == NULL)
 		return (702);
 	return (0);
 }
 
-int	dir_file_error(t_map map)
+int	dir_file_error(t_map *map)
 {
 	int	i;
 	int	fd[4];
@@ -32,7 +32,7 @@ int	dir_file_error(t_map map)
 	i = -1;
 	while (++i < 4)
 	{
-		fd[i] = open(map.texture_dirs[i].texture_path, O_RDONLY);
+		fd[i] = open(map->texture_dirs[i].texture_path, O_RDONLY);
 		if (fd[i] < 0)
 		{
 			close(fd[i]);

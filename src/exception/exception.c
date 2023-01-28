@@ -6,20 +6,21 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:51:58 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/27 17:41:42 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:25:19 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/header.h"
 
-int	exception_handler(t_map map)
+int	exception_handler(t_map *map)
 {
 	int			i;
 	int			handle_code;
-	t_exception	exception[24];
+	t_exception	*exception;
 
 	i = -1;
 	handle_code = 0;
+	exception = malloc(sizeof(t_exception) * 24);
 	static_exception(exception);
 	while (exception[++i].message != NULL)
 	{
@@ -28,5 +29,6 @@ int	exception_handler(t_map map)
 			exit(printf("Error : %d %s\n", exception[i].error_code, \
 			exception[i].message));
 	}
+	free(exception);
 	return (i);
 }

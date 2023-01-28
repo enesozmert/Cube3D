@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:28:32 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/27 17:49:47 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:15:24 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	read_map(argv[1], &game.map);
 	parser_map(&game.map);
-	exception_handler(game.map);
+	exception_handler(&game.map);
 	player(&game);
 	draw_screen(&game);
 	init_texture(&game);
