@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:43 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 16:25:44 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 13:11:52 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_key
 	int	is_right;
 	int	is_esc;
 	int	is_space;
+	int	cursor;
 }	t_key;
 
 #endif

@@ -1,6 +1,6 @@
 #Definition
 CC          	=   gcc
-NAME        	=   cube3d
+NAME        	=   cub3D
 USER_NAME1		=	eozmert
 USER_NAME2		=	iyapar
 LIBFT			=	./libraries/libft/libft.a
@@ -28,6 +28,7 @@ SRC_GNL			=	gnl/
 SRC_INIT		=	init/
 SRC_FORMAT		=	format/
 SRC_PLAYER		=	player/
+SRC_DESTROY		=	destroy/
 SRC_STATIC		=	static/
 
 #Files
@@ -40,7 +41,8 @@ CORE			= 	ft_strjoin_s1 get_filename_from_path get_filename_without_extension \
 DRAWING			= 	draw_screen draw_pixel_height draw_texture_color draw_texture_calculate \
 					draw_wall_x draw_texture draw_texture_select
 EVENTS			= 	event_close event_key_down event_key_up\
-					key_player_rotate key_player_move key_close key_player_jump
+					key_player_rotate key_player_move key_close key_player_jump\
+					event_mouse_move
 PARSING			=	parser_map \
 					parser_map_ceiling parser_map_floor parser_map_textture_dir
 RAYCASTING		= 	ray_update ray ray_steps ray_hit ray_fisheye_fixed ray_wall_height \
@@ -53,6 +55,7 @@ INIT			= 	init_map init_floor init_ceiling init_texture_dirs \
 FORMAT			= 	format_floor format_ceiling format_texture_dir
 PLAYER			=	player_rotate get_player_position get_player_dir player_select_rotate \
 					player_position_is_wall player_move player
+DESTROY			=	destroy_all destroy_ceiling destroy_floor destroy_map destroy_texture_dir
 STATIC			=	static_exception
 
 #FileCreate 
@@ -67,6 +70,7 @@ SRC_FILES		+=	$(addprefix $(SRC_GNL),$(GNL))
 SRC_FILES		+=	$(addprefix $(SRC_INIT),$(INIT))
 SRC_FILES		+=	$(addprefix $(SRC_FORMAT),$(FORMAT))
 SRC_FILES		+=	$(addprefix $(SRC_PLAYER),$(PLAYER))
+SRC_FILES		+=	$(addprefix $(SRC_DESTROY),$(DESTROY))
 SRC_FILES		+=	$(addprefix $(SRC_STATIC),$(STATIC))
 
 SRC 			= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
@@ -89,6 +93,7 @@ $(OBJF):
 	@mkdir -p $(OBJ_DIR)$(SRC_INIT)
 	@mkdir -p $(OBJ_DIR)$(SRC_FORMAT)
 	@mkdir -p $(OBJ_DIR)$(SRC_PLAYER)
+	@mkdir -p $(OBJ_DIR)$(SRC_DESTROY)
 	@mkdir -p $(OBJ_DIR)$(SRC_STATIC)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJF)

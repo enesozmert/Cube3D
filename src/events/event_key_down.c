@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_key_down.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:48:07 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/25 17:48:09 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:34:30 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int	event_key_down(int key_code, t_game *game)
 		game->key.is_esc = 1;
 	if (key_code == MACOS_SPACE)
 		game->key.is_space = 1;
+	if (key_code == 14)
+		game->key.cursor += 1;
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@42kocaeli.com.tr>         +#+  +:+       +#+        */
+/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:10:05 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/26 10:10:06 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 13:11:58 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	init_key(t_key *key)
 	key->is_right = 0;
 	key->is_esc = 0;
 	key->is_space = 0;
+	key->cursor = 1;
 }

@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   event_close.c                                      :+:      :+:    :+:   */
+/*   destroy_texture_dir.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 17:47:20 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/28 14:45:10 by eozmert          ###   ########.fr       */
+/*   Created: 2023/01/28 14:52:30 by eozmert           #+#    #+#             */
+/*   Updated: 2023/01/28 14:52:46 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/header.h"
 
-int	event_close(t_game *game)
+int	destroy_texture_dir(t_texture_dir *texture_dir)
 {
-	destroy_all(game);
-	mlx_clear_window(game->wlx.mlx, game->wlx.win);
-	mlx_destroy_window(game->wlx.mlx, game->wlx.win);
-	exit(0);
+	int	i;
+
+	i = -1;
+	while (++i < 4)
+	{
+		free(texture_dir[i].dir);
+		free(texture_dir[i].texture_path);
+	}
+	return (0);
 }

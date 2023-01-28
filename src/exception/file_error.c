@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:54:12 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/28 12:16:33 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 15:36:00 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int	map_file_error(t_map *map)
 {
-	char	*str;
-
 	if (map->fd < 0)
 		return (704);
-	str = ft_strchr(map->path, '.');
-	if (ft_strnstr(&str[0], map->extension, ft_strlen(map->path)) == NULL)
+	if (ft_strncmp(map->extension, "cub", ft_strlen(map->extension)) != 0
+		|| (int)ft_strlen(map->extension) != 3)
 		return (702);
 	return (0);
 }

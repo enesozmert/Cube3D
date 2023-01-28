@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:25:40 by eozmert           #+#    #+#             */
-/*   Updated: 2023/01/27 17:48:51 by eozmert          ###   ########.fr       */
+/*   Updated: 2023/01/28 14:49:54 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ int				ray_time(t_game *game);
 int				event_close(t_game *game);
 int				event_key_up(int key_code, t_game *game);
 int				event_key_down(int key_code, t_game *game);
+int				event_mouse_move(int x, int y, t_game *game);
 int				key_close(t_game *game);
 int				key_player_rotate(t_game *game);
 int				key_player_move(t_game *game);
@@ -135,4 +136,10 @@ int				key_player_jump(t_game *game);
 void			init_key(t_key *key);
 // static
 void			static_exception(t_exception *exception);
+//destroy
+int				destroy_map(t_map *map);
+int				destroy_texture_dir(t_texture_dir *texture_dir);
+int				destroy_ceiling(t_ceiling *ceiling);
+int				destroy_floor(t_floor *floor);
+int				destroy_all(t_game *game);
 #endif
